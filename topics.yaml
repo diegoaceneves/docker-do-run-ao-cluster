@@ -1,0 +1,25 @@
+---
+Topics:
+  Container:
+    Diferenças entre:
+    - VM:
+    - container:
+    - chroot:
+    LXC:
+    Docker:
+      run: nginx
+      run: wordpress sem persistencia
+      volumes:
+      - volume:
+      - bind:
+      storage:
+      - nfs: 
+      - glusterfs:
+      - etc:
+      run: wordpress com persistencia
+      build:
+        dockerfile:
+        dockerhub:
+      service:
+      swarm: cluster aws
+        stack:
