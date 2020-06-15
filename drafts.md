@@ -1,0 +1,30 @@
+# Container
+## Diferenças entre
+* VM
+* Container
+  * LXC
+  * Docker
+# Docker
+* Container
+  * Run
+  * Logs
+  * Start/Stop
+  * Ls/Inspect
+  * Rm/Prune
+* Volume
+  * Tipos
+  * Create
+  * Ls/Inspect
+  * Rm/Prune
+* Network
+  * Create
+  * Ls/Inspect
+  * Rm/Prune
+* DockerFile/Docker Hub
+* Service
+  * Create
+  * Ls/Ps/Inspect
+  * Logs
+  * Scale
+* Swarm
+  * Stack
