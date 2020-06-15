@@ -1,0 +1,12 @@
+---
+Requirements:
+  nodes:
+    count: 3
+    setup:
+    - cpu: 1cpu
+    - ram: 1Gib
+    - disk: 8gb
+    accounts:
+    - AWS:
+    - Cloudflare:
+    - dot.tk:
