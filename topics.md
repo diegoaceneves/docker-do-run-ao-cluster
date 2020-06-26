@@ -1,6 +1,6 @@
 # Container
 ## Diferenças entre
-![lxc-vm](https://www.mundodocker.com.br/wp-content/uploads/2015/06/lxc-vm.jpg)
+![lxc-vm](images/lxc-vm.jpg)
 * VM: Virtualização a nível de "Hardware"
 * Container: Virtualização a nível de "Sistema Operacional"/Software
   * LXC - Linux Containers
@@ -29,13 +29,25 @@
     * Remover um container e Remover todos os containers que não estão sendo executados.
 * Volume
   * Tipos
+    * Volume - Volume "gerenciado" pelo docker
+    * Bind - Diretório do S.O. "montado" no docker
   * Create
+  ```bash
+  docker volume create meuvolume
+  ```
   * Ls/Inspect
+    * Listar e Mostrar todos os detalhes dos volumes.
   * Rm/Prune
+    * Remover uma rede e Remover todos os volume que não estão 'attachados' em algum container.
 * Network
   * Create
+  ```bash
+  docker network create minharede
+  ```
   * Ls/Inspect
+    * Listar e Mostrar todos os detalhes das redes.
   * Rm/Prune
+    * Remover uma rede e Remover todos as redes que não estão 'attachados' em algum container.
 * DockerFile/Docker Hub
 * Service
   * Create
