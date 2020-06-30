@@ -8,6 +8,10 @@
     * Trabalha com camadas (commits)
     * Apenas a ultima camada é RW
 # Docker
+* Instalação
+```bash
+curl -fsSL https://get.docker.com | bash
+```
 * Container 
   * Run
   ```bash
@@ -49,14 +53,36 @@
   * Rm/Prune
     * Remover uma rede e Remover todos as redes que não estão 'attachados' em algum container.
 * DockerFile/Docker Hub
-* Service
-  * Create
-  * Ls/Ps/Inspect
-  * Logs
-  * Scale
 * Swarm
-  * Stack
+  * Criando cluster (Nó master)
+  ```bash
+  docker swarm init
+  ```
+  * Adicionando nós
+  ```bash
+   docker swarm join --token <TOKEN> <IPMASTER>:2377
+  ```
+  * Verificando nós
+  ```bash
+  docker node ls
+  ```
+  * Provendo nós de worker para master
+  ```bash
+  docker node promote <NOMEDONÓ>
+  ```
+  * Service
+    * Create
+      * Cria um serviço
+    * Ls/Ps/Inspect 
+      * Listar os serviço, detalhes de um serviço
+    * Logs
+      * Mostrar logs de um serviço
+    * Scale
+      * Escalar um serviço
+  * stack
+
 # Referencias
+* [Docker Documentation](https://docs.docker.com/)
 * [Livro: Docker Para Desenvolvedores](https://leanpub.com/dockerparadesenvolvedores)
 * [Livro: Descomplicando o Docker](https://www.amazon.com.br/dp/B01M4P01VI)
 * [Canal Youtube LinuxTips](https://www.youtube.com/linuxtips)
