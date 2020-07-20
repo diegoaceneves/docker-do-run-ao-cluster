@@ -22,7 +22,7 @@ Hands-on com um overview sobre docker, mostrando de forma simples os principais 
   * RDS
     * MariaDB - FreeTier
   * EFS
-    * Sistema
+    * Sistema de arquivos
 
 ### Para 50% de Aproveitamento
 * 3 VMs (Debian ou Ubuntu):
