@@ -1,0 +1,11 @@
+---
+# vars file for create_ec2
+instance_type: t2.micro
+security_group: default
+image: ami-0758470213bdd23b1
+keypair: vader
+region: us-east-1
+tag: docker
+group_file: docker
+count: 3
+

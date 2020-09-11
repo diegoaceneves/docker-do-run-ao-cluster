@@ -1,0 +1,3 @@
+---
+# tasks file for create_ec2
+- include: provisioning.yml
