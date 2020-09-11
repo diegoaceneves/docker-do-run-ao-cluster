@@ -1,0 +1,13 @@
+---
+instance_type: t2.micro
+security_group: default
+image: ami-0758470213bdd23b1
+keypair: vader
+region: us-east-1
+tag: docker
+group_file: docker
+ssh_user: ubuntu
+count: 1
+nfs_storage: fs-af951c2d.efs.us-east-1.amazonaws.com:/
+mount_point: /media/dados
+bashrc_url: https://raw.githubusercontent.com/diegoaceneves/dotfiles/master/bashrc
