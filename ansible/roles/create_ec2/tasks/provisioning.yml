@@ -17,7 +17,7 @@
   local_action: lineinfile
     dest="./hosts"
     regexp={{ item.public_ip }}
-    insertafter="[semanadevops]" line={{ item.public_ip }}
+    insertafter="[{{group_file}}]" line={{ item.public_ip }}
   with_items: "{{ ec2.instances }}"
 
 - name: Esperando o ssh
@@ -32,8 +32,19 @@
   with_items: "{{ ec2.instances }}"
   args:
     tags:
-      Name: "{{ tag }}"
+      Name: "{{ tag }}{{ item_id+1 }}"
+  loop_control:
+     index_var: item_id
 
 - name: Adicionando a maquina criada no known_hosts
   shell: ssh-keyscan -H {{ item.public_ip }} >> ~/.ssh/known_hosts
   with_items: "{{ ec2.instances }}"
+
+- name: Adicionando a instancia criada no .ssh/config
+  local_action: lineinfile
+    dest="~/.ssh/config"
+    insertafter="## AWS" 
+    line="Host {{ tag  }}{{ item_id+1 }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\nHost {{ item.public_ip }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\n\n"
+  with_items: "{{ ec2.instances }}"
+  loop_control:
+    index_var: item_id
