@@ -9,7 +9,6 @@
 - name: Atualizando cache do APT
   apt:
     update_cache: yes
-    cache_valid_time: 3600
 
 - name: Instalando pacotes padrões
   apt: name={{APT_PACKAGES}} state=present
@@ -17,6 +16,9 @@
 - name: Criando Diretorio
   file:
     path: "{{ mount_point }}"
+    owner: nobody
+    group: nogroup
+    mode: 0777
     state: directory
 
 - name: Adicionando ponto de montagem no /etc/fstab

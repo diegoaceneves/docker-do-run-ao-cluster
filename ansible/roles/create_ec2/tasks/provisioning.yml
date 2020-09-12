@@ -44,7 +44,7 @@
   local_action: lineinfile
     dest="~/.ssh/config"
     insertafter="## AWS" 
-    line="Host {{ tag  }}{{ item_id+1 }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\nHost {{ item.public_ip }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\n\n"
+    line="Host {{ tag  }}{{ item_id+1 }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\n\nHost {{ item.public_ip }}\n   hostname {{ item.public_ip }}\n   user {{ ssh_user }}\n   IdentityFile ~/.ssh/{{ keypair }}.pem\n\n"
   with_items: "{{ ec2.instances }}"
   loop_control:
     index_var: item_id
