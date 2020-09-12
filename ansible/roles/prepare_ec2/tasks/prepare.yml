@@ -6,13 +6,6 @@
   timezone:
     name: America/Sao_Paulo
 
-- name: Atualizando cache do APT
-  apt:
-    update_cache: yes
-
-- name: Instalando pacotes padrões
-  apt: name={{APT_PACKAGES}} state=present
-
 - name: Criando Diretorio
   file:
     path: "{{ mount_point }}"
@@ -26,22 +19,13 @@
     dest="/etc/fstab"
     line="{{ nfs_storage }} {{ mount_point }} nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 0 0"
 
+- name: Atualizando cache do APT
+  apt:
+    update_cache: yes
+
+- name: Instalando pacotes padrões
+    apt: name={{APT_PACKAGES}} state=present
+
 - name: Montando diretório
-  shell:
-    cmd: mount -a
-
-- name: Baixando bashrc para usuário
-  get_url:
-    url: "{{ bashrc_url }}"
-    dest: /home/{{ssh_user}}/.bashrc
-    mode: 0644
-    owner: "{{ ssh_user }}"
-    group: "{{ ssh_user }}"
-
-- name: Baixando bashrc para usuário
-  get_url:
-    url: "{{ bashrc_url }}"
-    dest: /root/.bashrc
-    mode: 0644
-    owner: root
-    group: root
+    shell:
+      cmd: mount -a

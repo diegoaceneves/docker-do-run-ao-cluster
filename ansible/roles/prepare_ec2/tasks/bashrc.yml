@@ -1,0 +1,15 @@
+- name: Baixando bashrc para usuário
+  get_url:
+    url: "{{ bashrc_url }}"
+    dest: /home/{{ssh_user}}/.bashrc
+    mode: 0644
+    owner: "{{ ssh_user }}"
+    group: "{{ ssh_user }}"
+
+- name: Baixando bashrc para usuário
+  get_url:
+    url: "{{ bashrc_url }}"
+    dest: /root/.bashrc
+    mode: 0644
+    owner: root
+    group: root

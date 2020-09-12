@@ -1,3 +1,4 @@
 ---
 # tasks file for roles/prepare_ec2/---
 - include: prepare.yml
+- include: bashrc.yml
