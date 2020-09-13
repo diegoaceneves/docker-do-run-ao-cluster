@@ -23,9 +23,16 @@
   apt:
     update_cache: yes
 
+- name: Atualizando pacotes
+  apt:
+    name: "*"
+    state: latest    
+
 - name: Instalando pacotes padrões
-    apt: name={{APT_PACKAGES}} state=present
+  apt:
+    name: "{{ APT_PACKAGES }}"
+    state: present
 
 - name: Montando diretório
-    shell:
-      cmd: mount -a
+  shell:
+    cmd: mount -a

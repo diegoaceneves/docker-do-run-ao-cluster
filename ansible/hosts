@@ -1,3 +1,6 @@
 [local]
 localhost ansible_connection=local ansible_python_interpreter=python3.8
 [docker]
+52.90.4.128
+34.201.126.202
+3.89.8.173
