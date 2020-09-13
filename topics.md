@@ -18,7 +18,7 @@ curl -fsSL https://get.docker.com | bash
   docker container run  hello-world
   docker container run -ti debian bash
   docker container run -p 80:80 nginx 
-  docker container run -d -p 80:80 -name meucontainer nginx 
+  docker container run -d -p 80:80 --name meucontainer nginx 
   ```
   * Logs
   ```bash
